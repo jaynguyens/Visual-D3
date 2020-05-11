@@ -22,16 +22,29 @@ const Transition = () => {
 
     svg
       .append("rect")
-      .attr("x", 10)
-      .attr("y", 200)
+      .attr("x", 25)
+      .attr("y", 25)
       .attr("width", 100)
       .attr("height", 30)
       .attr("fill", "#69b3a2")
       .attr("stroke-width", 1)
-      //animation
+      //animation step 1 - width
       .transition()
       .duration(2000)
-      .attr("width", 400);
+      .attr("width", 400)
+      //animation step 2 - height
+      .transition()
+      .duration(2000)
+      .attr("height", 100)
+      //animation step 3 -  color
+      .transition()
+      .duration(1000)
+      .style("fill", "red")
+      //animation step 4 - change all three
+      .transition()
+      .duration(3000)
+      .attr("height", "50")
+      .attr("width", 50);
   }, []);
 
   return (
